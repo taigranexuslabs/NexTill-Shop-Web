@@ -5,7 +5,7 @@ NexTill Shop has two separate clients:
 - The desktop website is the Vite app at the repository root.
 - The mobile app is an Expo Router project in `mobile/`; application screens and logic use JavaScript/JSX.
 
-Both apps save working data locally first. The desktop website uses IndexedDB through Dexie and caches its production app shell with a service worker; the mobile app uses SQLite. Product photos can be captured or selected from the desktop add-product form, and captured on mobile; they remain available offline. Mobile sales and product changes have a local outbox and sync to Supabase when available. Desktop data can be backed up to Supabase as snapshots and restored after a confirmation prompt. Cloud access is optional for local/offline use.
+Both apps save working data locally first. The desktop website uses IndexedDB through Dexie and caches its production app shell with a service worker; the mobile app uses SQLite. Product photos can be captured or selected from the desktop add-product form, and captured on mobile; they remain available offline. Mobile products can use multiple barcode aliases for the same stock unit, and deleting a product archives it so sales history remains intact. Mobile sales and product changes have a local outbox and sync to Supabase when available. Desktop data can be backed up to Supabase as snapshots and restored after a confirmation prompt. Cloud access is optional for local/offline use.
 
 ## Run locally
 
@@ -45,3 +45,4 @@ npx expo export --platform android
 
 For store builds, configure the application identifiers and signing credentials, then use EAS Build with the profiles in `mobile/eas.json`. Supabase credentials and project configuration are required to validate live authentication, backup, and sync.
 # NexTill-Shop
+# NexTill-Shop-Web
